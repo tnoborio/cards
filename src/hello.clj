@@ -13,7 +13,8 @@
   (http/create-server
    {::http/routes routes
     ::http/type   :jetty
-    ::http/port   8890}))
+    ::http/host "0.0.0.0"
+    ::http/port   3456}))
 
-(defn start []
+(defn run [opts]
   (http/start (create-server)))

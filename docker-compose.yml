@@ -3,9 +3,10 @@ version: '3'
 services:
   app:
     image: clojure:temurin-19-tools-deps-bullseye-slim
-    command: clj -X hello/run
+    command: clj -X cards/run
     volumes:
       - .:/app
+      - ./.m2:/home/docker/.m2
     working_dir: /app
     ports:
       - 3456:3456
